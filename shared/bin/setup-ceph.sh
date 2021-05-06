@@ -29,4 +29,4 @@ else
     cd build
 fi
 
-ccache make -j$NPROC
+ninja -j$NPROC
