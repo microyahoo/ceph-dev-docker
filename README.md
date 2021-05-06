@@ -4,7 +4,18 @@ The purpose of these docker images is to ease the local development of Ceph, by
 providing a container-based runtime and development environment (based on
 openSUSE "Tumbleweed").
 
-It requires a local git clone to start up a
+Note: openSUSE "Tumbleweed" is a rolling release and containing the latest
+"stable" versions of all software. If you're experiencing any issues while
+setting up the container it might be worthwhile to try it out on Leap. In order
+to do so replace the first line in the `Dockerfile`:
+
+    FROM opensuse/tumbleweed
+
+with
+
+    FROM opensuse/leap:15.3
+
+`ceph-dev-docker` requires a local git clone to start up a
 [vStart](http://docs.ceph.com/docs/master/dev/dev_cluster_deployement/)
 environment.
 
