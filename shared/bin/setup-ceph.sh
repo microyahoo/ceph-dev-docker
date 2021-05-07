@@ -29,4 +29,8 @@ else
     cd build
 fi
 
-ninja -j$NPROC
+if which ninja; then
+    ninja -j$NPROC
+else
+    ccache make -j$NPROC
+fi
