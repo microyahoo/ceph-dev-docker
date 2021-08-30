@@ -1,3 +1,8 @@
+global:
+  http_config:
+    tls_config:
+      insecure_skip_verify: true
+
 route:
   receiver: 'ceph-dashboard'
   group_wait: 1m
@@ -7,5 +12,5 @@ route:
 receivers:
   - name: 'ceph-dashboard'
     webhook_configs:
-    - url: 'http://localhost:4200/api/prometheus_receiver'
+    - url: 'https://localhost:4200/api/prometheus_receiver'
     - url: 'http://localhost:9099/'
