@@ -3,7 +3,7 @@
 
 npm () {
   DIR=$(pwd)
-  source /ceph/build/src/pybind/mgr/dashboard/node-env/bin/activate .
+  source /ceph/build/src/pybind/mgr/dashboard/frontend/node-env/bin/activate .
   cd /ceph/src/pybind/mgr/dashboard/frontend
   command npm $@
   deactivate
@@ -12,7 +12,7 @@ npm () {
 
 npx () {
   DIR=$(pwd)
-  source /ceph/build/src/pybind/mgr/dashboard/node-env/bin/activate .
+  source /ceph/build/src/pybind/mgr/dashboard/frontend/node-env/bin/activate .
   cd /ceph/src/pybind/mgr/dashboard/frontend
   command npx $@
   deactivate
