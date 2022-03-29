@@ -25,6 +25,8 @@ RUN zypper -n install \
         python3-Routes \
         python3-scipy \
         python3-Werkzeug \
+        python3-natsort \
+        python3-asyncssh \
         xvfb-run
 
 # temporary fix for error regarding version of tempora

@@ -11,6 +11,9 @@ ARGS="-DWITH_PYTHON3=3 -DWITH_RADOSGW_AMQP_ENDPOINT=OFF -DWITH_RADOSGW_KAFKA_END
 
 NPROC=${NPROC:-$(nproc --ignore=2)}
 
+# Other dependencies
+zypper -n install utf8proc-devel
+
 # SSO dependencies
 zypper -n install libxmlsec1-1 libxmlsec1-nss1 libxmlsec1-openssl1 xmlsec1-devel xmlsec1-openssl-devel
 pip install python3-saml
