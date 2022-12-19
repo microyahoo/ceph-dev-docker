@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
 # sym link for .zshrc
 rm /root/.zshrc
 ln -s /shared/zsh/.zshrc /root/.zshrc

@@ -1,37 +1,24 @@
-FROM opensuse/leap:15.2
-LABEL maintainer="rimarques@suse.com"
+FROM quay.io/centos/centos:stream
+LABEL maintainer="liangzheng@deeproute.ai"
 
-RUN zypper --gpg-auto-import-keys ref
-RUN zypper -n dup
-RUN zypper -n install \
-        iproute2 net-tools-deprecated zsh lttng-ust-devel babeltrace-devel \
-        bash vim tmux git aaa_base ccache wget jq google-opensans-fonts psmisc \
-        rpm-build smartmontools \
-        python python-devel python2-virtualenv \
-        python3-pip python3-devel \
-        python3-bcrypt \
-        python3-CherryPy \
-        python3-Cython \
-        python3-Jinja2 \
-        python3-jsonpatch \
-        python3-pecan \
-        python3-PrettyTable \
-        python3-PyJWT \
-        python3-pylint \
-        python3-pyOpenSSL \
-        python3-PyYAML \
-        python3-remoto \
-        python3-requests \
-        python3-Routes \
-        python3-scipy \
-        python3-Werkzeug \
-        xvfb-run
+RUN yum install -y epel-release 
+RUN yum install -y gcc gcc-c++ python36  \
+    python3-devel wget iproute \
+    vim tmux git bash jq rpm-build \
+    zsh python3-pip \
+    cryptopp cryptopp-devel \
+    c-ares c-ares-devel \
+    gnutls-devel \
+    yaml-cpp-devel \
+    dpdk-devel \
+    openmpi-devel \
+    lksctp-tools-devel \
+    ragel-devel \
+    numactl-devel numactl
+RUN yum install -y ccache
+RUN dnf --enablerepo=powertools install -y protobuf-devel hwloc-devel xmlsec1-devel xmlsec1-openssl-devel
 
 ADD /shared/docker/ /docker
-
-# Chrome
-RUN /docker/install-chrome.sh
-ENV CHROME_BIN /usr/bin/google-chrome
 
 # oh-my-zsh
 ENV ZSH_DISABLE_COMPFIX true

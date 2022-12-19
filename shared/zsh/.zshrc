@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/root/.oh-my-zsh"
 
@@ -100,6 +100,3 @@ export LC_ALL=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cdb='cd /ceph/build'
-alias cdbd='cd /ceph/build/src/pybind/mgr/dashboard'
-alias cdsd='cd /ceph/src/pybind/mgr/dashboard'
-alias activate='source /ceph/build/src/pybind/mgr/dashboard/frontend/node-env/bin/activate .'
