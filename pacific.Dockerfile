@@ -1,8 +1,9 @@
 FROM quay.io/centos/centos:stream
 LABEL maintainer="liangzheng@deeproute.ai"
 
+RUN dnf -y group install "Development Tools"
 RUN yum install -y epel-release 
-RUN yum install -y gcc gcc-c++ python36  \
+RUN yum install -y gcc gcc-c++ python36 make \
     python3-devel wget iproute \
     vim tmux git bash jq rpm-build \
     zsh python3-pip \
@@ -14,6 +15,7 @@ RUN yum install -y gcc gcc-c++ python36  \
     openmpi-devel \
     lksctp-tools-devel \
     ragel-devel \
+    libffi-devel \
     numactl-devel numactl
 RUN yum install -y ccache
 RUN dnf --enablerepo=powertools install -y protobuf-devel hwloc-devel xmlsec1-devel xmlsec1-openssl-devel
